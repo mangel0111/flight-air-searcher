@@ -20,10 +20,10 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['ng-annotate','babel-loader'], exclude: /node_modules/ },
+      { test: /\.js$/, loaders: ['ng-annotate', 'babel-loader'], exclude: /node_modules/ },
       { test: /\.html$/, loader: 'raw' },
       // inline base64 URLs for <=8k images, direct URLs for the rest
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       // helps to load bootstrap's css.
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&minetype=application/font-woff' },
@@ -50,7 +50,7 @@ module.exports = {
     sourceMap: true
   },
 
-  postcss: function() {
+  postcss() {
     return [autoprefixer];
   }
 };

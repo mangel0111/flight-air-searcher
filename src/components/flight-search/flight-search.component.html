@@ -1,0 +1,40 @@
+<div class="flight-search__container">
+    <div class="flight-search__box">
+        <div class="flight-search__box--row">
+            <h1>Pick your destiny</h1>
+        </div>
+        <div class="flight-search__box--row">
+            <div class="flight-search__cities">
+                <div class="flight-search--city">
+                    <label>Origin:</label>   
+                    <input placeholder="Origin city" type="text" name="originCity" ng-model="originCity" id="originCity" ng-keyup="complete({city: originCity, key: 'originCity'})"/>
+                    <ul class="flight-search__city--search-box" ng-model="hidethisOrigin" ng-hide="hidethisOrigin">  
+                        <li class="flight-search__city--search-item" ng-repeat="citydata in originCityFilter" ng-click="fillTextbox({city: citydata, key: 'originCity'})">{{citydata}}</li>  
+                    </ul> 
+                </div>
+                <div class="flight-search--city">
+                    <label>Destiny:</label>   
+                    <input placeholder="Destiny city" type="text" name="destinyCity" ng-model="destinyCity" id="destinyCity" ng-keyup="complete({city: destinyCity, key: 'destinyCity'})"/>
+                    <ul class="flight-search__city--search-box" ng-model="hidethisDestiny" ng-hide="hidethisDestiny">  
+                        <li class="flight-search__city--search-item" ng-repeat="citydata in destinyCityFilter" ng-click="fillTextbox({city: citydata, key: 'destinyCity'})">{{citydata}}</li>  
+                    </ul> 
+                </div>
+            </div>
+        </div>
+        <div class="flight-search__box--row">
+            <date-wrapper
+                start-date="$ctrl.startDate"
+                end-date="$ctrl.endDate">
+            </date-wrapper>
+        </div> 
+        <div class="flight-search__box--row">
+            <div class="flight-search__box__line">
+                <a ng-click="findFlights()" class="flight-search__box--button">
+                    Search
+                </a>
+            </div>
+            
+        </div> 
+        
+    </div>
+</div>

@@ -1,18 +1,21 @@
 module.exports = function (config) {
-
-  var configuration = {
+  const configuration = {
     // base path used to resolve all patterns
     basePath: '',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['jasmine'],
 
     // list of files/patterns to load in the browser
     files: [{ pattern: 'spec.bundle.js', watched: false }],
 
     // files to exclude
     exclude: [],
+
+    pluggins: [
+
+    ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -25,7 +28,8 @@ module.exports = function (config) {
           { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
           { test: /\.html/, loader: 'raw' },
           { test: /\.styl$/, loader: 'style!css!stylus' },
-          { test: /\.css$/, loader: 'style!css' }
+          { test: /\.css$/, loader: 'style!css' },
+          { test: /\.scss$/, loader: 'style!css!' }
         ]
       }
     },
@@ -55,17 +59,17 @@ module.exports = function (config) {
     browsers: ['Chrome'],
 
     customLaunchers: {
-        Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-        }
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     },
 
     // if true, Karma runs tests once and exits
     singleRun: true
   };
 
-  if(process.env.TRAVIS){
+  if (process.env.TRAVIS) {
     configuration.browsers = ['Chrome_travis_ci'];
     // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
     // configuration.coverageReporter = {
@@ -75,5 +79,4 @@ module.exports = function (config) {
   }
 
   config.set(configuration);
-
 };

@@ -1,4 +1,4 @@
-<div class="control is-horizontal">
+<div class="date--wrapper control is-horizontal">
   <div class="control-label">
     <label class="label">
       Fly out:
@@ -6,7 +6,7 @@
   </div>
 
   <div class="control">
-    <date-selector date="$ctrl.startDate">
+    <date-selector date="$ctrl.startDate" dateType="startDate">
     </date-selector>
   </div>
 
@@ -16,7 +16,7 @@
     </label>
   </div>
   <div class="control">
-    <date-selector date="$ctrl.endDate">
+    <date-selector date="$ctrl.endDate" dateType="endDate">
     </date-selector>
   </div>
 </div>

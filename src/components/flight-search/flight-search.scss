@@ -1,0 +1,99 @@
+.flight-search {
+    &__container {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    &__box {
+        margin-left: auto;
+        margin-right: auto;
+        background-image: linear-gradient(to top,#1e8adf,#2994e6);
+        border: 2px solid #1177ca;
+        border-radius: 0 0 5px 5px;
+        padding: 16px 0;
+        width: 50%;
+        color: #fff;
+
+        &--row {
+            margin-right: 20px;
+            margin-left: 20px;
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__line {
+            display: flex;
+            margin-right: 5px;
+        }
+
+        &--button {
+            color: #073590;
+            background-color: #F1C933;
+            border-color: #F1C933;
+            font-size: 24px;
+            padding: 7px 32px;
+            margin-left: auto;
+        }
+    }
+    &__cities {
+        display: flex;
+        margin-left: 19px;
+        margin-bottom: 10px;
+    }
+
+    &--city {
+        flex: 1;
+
+        label {
+            margin-right: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        input {
+            height: 35px;
+            width: 360px;
+            border-radius: 3px;
+            border: 1px solid #dbdbdb;
+            font-size: 18px;
+            line-height: 32px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &__city {
+        &--search-box {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            position: absolute;
+            z-index: 999;
+            margin-left: 75px;
+            margin-top: 2px;
+        }
+    
+        &--search-item {
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            padding: .75rem 1.25rem;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,.125);
+            color: #000;
+            width: 300px;
+
+            &:hover {
+                color: #1d1e1f;
+                text-decoration: none;
+                background-color: #f7f7f9;
+            }
+        }
+    }
+}

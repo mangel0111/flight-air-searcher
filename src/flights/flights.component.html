@@ -1,0 +1,35 @@
+<div>
+    <nav class="nav">
+        <div class="nav__header">
+          <a class="nav--logo" ui-sref="home">Company Logo</a>
+        </div>
+    </nav>
+    <div class="subNav">
+        <div class="subNav__title">
+            <div class="subNav__title--cities">
+                From <span>{{origin}}</span> - to <span>{{destiny}}</span>
+            </div>
+            <div class="subNav__title--results">
+                {{results}} Results found
+            </div>
+        </div>
+    </div>
+    <div class="results">
+        <div class="results__box">
+            <div class="results__box--title">
+                From <span>{{origin}}</span> - to <span>{{destiny}}</span>
+            </div>
+            <ul>
+                    <li class="results__box--flight" ng-repeat="flight in flights" >
+                        <span class="results__box--info">
+                            <span>{{origin}} ({{flight.dateFrom}})</span>  
+                                duration: {{flight.duration}}
+                            <span>{{destiny}} ({{flight.dateTo}})</span> 
+                        </span>  
+                        <a class="results__box--price">{{flight.currency}} {{flight.price}}</a>
+                    </li>  
+            </ul>
+        </div>
+    </div>
+</div>
+  
