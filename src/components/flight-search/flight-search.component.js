@@ -4,7 +4,8 @@ import './flight-search.scss';
 
 export const FlightSearchComponent = {
   bindings: {
-    originCity: '<'
+    originCity: '<',
+    destinyCity: '<'
   },
   template,
   controller
